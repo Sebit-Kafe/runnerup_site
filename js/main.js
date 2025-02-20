@@ -19,13 +19,35 @@ document.addEventListener('DOMContentLoaded', function() {
     delay: 600
   });
 
-  // Stagger fade-in for each paragraph in the poetry section
-  anime.timeline({ loop: false }).add({
-    targets: '.poetry p',
-    opacity: [0, 1],
-    easing: 'easeInOutQuad',
-    duration: 1000,
-    delay: anime.stagger(300)  // Stagger each paragraph by 300ms
+  // Stagger fade-in for each paragraph in the poetry section (if already visible)
+  // These animations will run when the poem is revealed.
+  function animatePoem() {
+    anime.timeline({ loop: false }).add({
+      targets: '.poetry p',
+      opacity: [0, 1],
+      easing: 'easeInOutQuad',
+      duration: 1000,
+      delay: anime.stagger(300)  // Stagger each paragraph by 300ms
+    });
+  }
+
+  // Event listener for the reveal button
+  var revealButton = document.getElementById('revealButton');
+  revealButton.addEventListener('click', function() {
+    var poemSection = document.querySelector('.poetry');
+    // Remove the hidden class to display the poem
+    poemSection.classList.remove('hidden');
+    // Animate the entire poem section (optional fade-in)
+    anime({
+      targets: poemSection,
+      opacity: [0, 1],
+      duration: 1000,
+      easing: 'easeInOutQuad'
+    });
+    // Run the paragraph stagger animation
+    animatePoem();
+    // Hide the button after clicking
+    revealButton.style.display = 'none';
   });
 
   // Falling Flowers Effect: create a new flower every second
