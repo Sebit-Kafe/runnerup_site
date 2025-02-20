@@ -111,7 +111,7 @@ body {
   top: -10%;
   width: 30px;
   height: 30px;
-  background-image: url('https://example.com/flower.png'); /* Replace with your flower image URL */
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flower_icon.svg/1200px-Flower_icon.svg.png'); /* Valid test image */
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 0.8;
@@ -126,6 +126,7 @@ body {
     transform: translateY(110vh) rotate(360deg);
   }
 }
+
 
 /* Animations */
 @keyframes fadeInDown {
