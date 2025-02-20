@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
       delay: anime.stagger(300)
     });
 
-  // Trigger fireworks after a delay using canvas-confetti
+  // Trigger fireworks using canvas-confetti after a short delay
   setTimeout(() => {
     confetti({
       particleCount: 150,
@@ -38,28 +38,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }, 2000);
 
-  // Play background music on button click to comply with browser policies
-  const playButton = document.getElementById('playMusic');
-  const bgMusic = document.getElementById('backgroundMusic');
-
-  playButton.addEventListener('click', function() {
-    bgMusic.play().catch(err => {
-      console.log("Playback prevented:", err);
-    });
-    // Optionally hide the button after playback starts
-    playButton.style.display = 'none';
-  });
-
   // Falling Flowers Effect: create a flower every second
   function createFlower() {
     const flowerContainer = document.querySelector('.flower-container');
     const flower = document.createElement('div');
     flower.classList.add('flower');
     flower.style.left = Math.random() * 100 + 'vw';
-    flower.style.animationDuration = (Math.random() * 3 + 5) + 's';
+    flower.style.animationDuration = (Math.random() * 3 + 5) + 's'; // Duration between 5-8 seconds
     flower.style.animationDelay = (Math.random() * 5) + 's';
     flowerContainer.appendChild(flower);
-    // Remove flower after animation completes (8 seconds)
+    // Remove the flower after the animation (8 seconds)
     setTimeout(() => flower.remove(), 8000);
   }
   setInterval(createFlower, 1000);
