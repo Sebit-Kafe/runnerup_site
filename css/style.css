@@ -67,7 +67,7 @@ body {
   flex: 1 1 600px;
   background: rgba(52, 73, 94, 0.8);
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   margin: 1rem;
   padding: 2rem;
   text-align: left;
@@ -111,7 +111,7 @@ body {
   top: -10%;
   width: 30px;
   height: 30px;
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flower_icon.svg/1200px-Flower_icon.svg.png'); /* Valid test image */
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flower_icon.svg/1200px-Flower_icon.svg.png'); /* Valid flower image */
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 0.8;
@@ -126,7 +126,6 @@ body {
     transform: translateY(110vh) rotate(360deg);
   }
 }
-
 
 /* Animations */
 @keyframes fadeInDown {
