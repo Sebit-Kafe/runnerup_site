@@ -62,27 +62,6 @@ body {
   padding: 2rem 0;
 }
 
-/* Badge Section */
-.badge-section {
-  flex: 1 1 300px;
-  text-align: center;
-  margin: 1rem;
-}
-
-.badge-section img {
-  width: 150px;
-  border: 4px solid var(--accent-color);
-  border-radius: 50%;
-  opacity: 0;
-  transform: scale(0.5);
-  animation: popIn 1s forwards;
-  animation-delay: 1s;
-  transition: transform 0.3s ease;
-}
-
-.badge-section img:hover {
-  transform: scale(1.1);
-}
 
 /* Poetry Section */
 .poetry {
