@@ -19,13 +19,48 @@ document.addEventListener('DOMContentLoaded', function() {
     delay: 600
   });
 
-  // Stagger fade in for each paragraph in the poetry section
+  // Stagger fade-in for each paragraph in the poetry section
   anime.timeline({loop: false})
     .add({
       targets: '.poetry p',
       opacity: [0, 1],
       easing: 'easeInOutQuad',
       duration: 1000,
-      delay: anime.stagger(300)  // Stagger the animation for each paragraph by 300ms
+      delay: anime.stagger(300)
     });
+
+  // Trigger fireworks after a delay using canvas-confetti
+  setTimeout(() => {
+    confetti({
+      particleCount: 150,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+  }, 2000);
+
+  // Play background music on button click to comply with browser policies
+  const playButton = document.getElementById('playMusic');
+  const bgMusic = document.getElementById('backgroundMusic');
+
+  playButton.addEventListener('click', function() {
+    bgMusic.play().catch(err => {
+      console.log("Playback prevented:", err);
+    });
+    // Optionally hide the button after playback starts
+    playButton.style.display = 'none';
+  });
+
+  // Falling Flowers Effect: create a flower every second
+  function createFlower() {
+    const flowerContainer = document.querySelector('.flower-container');
+    const flower = document.createElement('div');
+    flower.classList.add('flower');
+    flower.style.left = Math.random() * 100 + 'vw';
+    flower.style.animationDuration = (Math.random() * 3 + 5) + 's';
+    flower.style.animationDelay = (Math.random() * 5) + 's';
+    flowerContainer.appendChild(flower);
+    // Remove flower after animation completes (8 seconds)
+    setTimeout(() => flower.remove(), 8000);
+  }
+  setInterval(createFlower, 1000);
 });
