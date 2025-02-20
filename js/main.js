@@ -19,37 +19,13 @@ document.addEventListener('DOMContentLoaded', function() {
     delay: 600
   });
 
-  // Stagger fade-in for each paragraph in the poetry section
+  // Stagger fade in for each paragraph in the poetry section
   anime.timeline({loop: false})
     .add({
       targets: '.poetry p',
       opacity: [0, 1],
       easing: 'easeInOutQuad',
       duration: 1000,
-      delay: anime.stagger(300)
+      delay: anime.stagger(300)  // Stagger the animation for each paragraph by 300ms
     });
-
-  // Trigger fireworks using canvas-confetti after a short delay
-  setTimeout(() => {
-    confetti({
-      particleCount: 150,
-      spread: 70,
-      origin: { y: 0.6 }
-    });
-  }, 2000);
-
-  // Falling Flowers Effect: create a new flower every second
-  function createFlower() {
-    const flowerContainer = document.querySelector('.flower-container');
-    const flower = document.createElement('div');
-    flower.classList.add('flower');
-    flower.style.left = Math.random() * 100 + 'vw';
-    // Randomize animation duration and delay for variation
-    flower.style.animationDuration = (Math.random() * 3 + 5) + 's';
-    flower.style.animationDelay = (Math.random() * 5) + 's';
-    flowerContainer.appendChild(flower);
-    // Remove the flower after the animation (8 seconds)
-    setTimeout(() => flower.remove(), 8000);
-  }
-  setInterval(createFlower, 1000);
 });
