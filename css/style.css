@@ -1,0 +1,171 @@
+/* CSS Variables for theme management */
+:root {
+  --primary-color: #1a1a1a;
+  --secondary-color: #333;
+  --accent-color: #ff6f61;
+  --text-color: #fff;
+  --font-family: 'Poppins', sans-serif;
+}
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Container to center content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header styles */
+.site-header {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.headline {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInDown 1s forwards;
+}
+
+.subheadline {
+  font-size: 1.8rem;
+  margin-top: 0.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.5s;
+}
+
+/* Main Content */
+.content {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+/* Badge Section */
+.badge-section {
+  flex: 1 1 300px;
+  text-align: center;
+  margin: 1rem;
+}
+
+.badge-section img {
+  max-width: 100%;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: pop 1s forwards;
+  animation-delay: 1s;
+  transition: transform 0.3s ease;
+}
+
+.badge-section img:hover {
+  transform: scale(1.05);
+}
+
+/* Poetry Section */
+.poetry {
+  flex: 1 1 600px;
+  background: var(--secondary-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  margin: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.poetry h3 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.poetry p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 1.5s;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--secondary-color);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .headline {
+    font-size: 2.5rem;
+  }
+  .subheadline {
+    font-size: 1.5rem;
+  }
+  .poetry h3 {
+    font-size: 1.8rem;
+  }
+  .poetry p {
+    font-size: 1rem;
+  }
+  .content {
+    flex-direction: column;
+    padding: 1rem;
+  }
+}
