@@ -38,16 +38,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }, 2000);
 
-  // Falling Flowers Effect: create a flower every second
+  // Falling Flowers Effect: create a new flower every second
   function createFlower() {
     const flowerContainer = document.querySelector('.flower-container');
     const flower = document.createElement('div');
     flower.classList.add('flower');
     flower.style.left = Math.random() * 100 + 'vw';
-    flower.style.animationDuration = (Math.random() * 3 + 5) + 's'; // Duration between 5-8 seconds
+    // Randomize duration and delay for variation
+    flower.style.animationDuration = (Math.random() * 3 + 5) + 's';
     flower.style.animationDelay = (Math.random() * 5) + 's';
     flowerContainer.appendChild(flower);
-    // Remove the flower after the animation (8 seconds)
+    // Remove flower after animation completes (8 seconds)
     setTimeout(() => flower.remove(), 8000);
   }
   setInterval(createFlower, 1000);
