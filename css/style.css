@@ -1,4 +1,4 @@
-/* CSS Variables for easy theme management */
+/* CSS Variables for theme management */
 :root {
   --primary-color: #1a1a1a;
   --secondary-color: #333;
@@ -7,7 +7,7 @@
   --font-family: 'Poppins', sans-serif;
 }
 
-/* Global Reset and Base Styles */
+/* Global Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -54,7 +54,7 @@ body {
   animation-delay: 0.5s;
 }
 
-/* Main Content Area */
+/* Main Content */
 .content {
   flex: 1;
   display: flex;
@@ -107,14 +107,14 @@ body {
   animation-delay: 1.5s;
 }
 
-/* Footer styles */
+/* Footer */
 .site-footer {
   text-align: center;
   padding: 1rem;
   background: var(--secondary-color);
 }
 
-/* Keyframe Animations */
+/* Animations */
 @keyframes fadeInDown {
   to {
     opacity: 1;
@@ -150,7 +150,7 @@ body {
   }
 }
 
-/* Responsive Media Queries */
+/* Responsive Design */
 @media (max-width: 768px) {
   .headline {
     font-size: 2.5rem;
