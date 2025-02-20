@@ -44,11 +44,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const flower = document.createElement('div');
     flower.classList.add('flower');
     flower.style.left = Math.random() * 100 + 'vw';
-    // Randomize duration and delay for variation
+    // Randomize animation duration and delay for variation
     flower.style.animationDuration = (Math.random() * 3 + 5) + 's';
     flower.style.animationDelay = (Math.random() * 5) + 's';
     flowerContainer.appendChild(flower);
-    // Remove flower after animation completes (8 seconds)
+    // Remove the flower after the animation (8 seconds)
     setTimeout(() => flower.remove(), 8000);
   }
   setInterval(createFlower, 1000);
