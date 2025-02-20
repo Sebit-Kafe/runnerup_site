@@ -12,19 +12,20 @@ document.addEventListener('DOMContentLoaded', function() {
   // Animate the subheadline with a slide effect
   anime({
     targets: '.subheadline',
-    translateY: [-20, 0],
+    translateY: [-30, 0],
     opacity: [0, 1],
     duration: 1500,
     easing: 'easeOutExpo',
-    delay: 500
+    delay: 600
   });
 
-  // Fade in the poem text
-  anime({
-    targets: '.poetry p',
-    opacity: [0, 1],
-    duration: 1000,
-    easing: 'easeInOutQuad',
-    delay: 1500
-  });
+  // Stagger fade in for each paragraph in the poetry section
+  anime.timeline({loop: false})
+    .add({
+      targets: '.poetry p',
+      opacity: [0, 1],
+      easing: 'easeInOutQuad',
+      duration: 1000,
+      delay: anime.stagger(300)  // Stagger the animation for each paragraph by 300ms
+    });
 });
